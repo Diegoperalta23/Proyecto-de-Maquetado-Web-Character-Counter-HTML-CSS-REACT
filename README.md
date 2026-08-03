@@ -65,7 +65,7 @@ Incluye un cambio de tema para alternar entre:
 
 # Estructura del proyecto
 
-
+```
 src
 │
 ├── components
@@ -83,7 +83,7 @@ src
 ├── App.jsx
 ├── App.css
 └── main.jsx
-
+```
 
 ------------------------------------------
 
