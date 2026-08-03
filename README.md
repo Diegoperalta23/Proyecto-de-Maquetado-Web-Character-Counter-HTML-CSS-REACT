@@ -121,4 +121,4 @@ Diego Peralta
 
 # Pagina
 
-![Pagina en modo oscuro](.\assets\character-counter-page.png)
+![Character Counter](./src/assets/character-counter-page.png)
