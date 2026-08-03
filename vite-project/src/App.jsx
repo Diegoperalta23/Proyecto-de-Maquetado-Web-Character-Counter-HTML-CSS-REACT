@@ -87,3 +87,44 @@ const visibleLetters = showAll ? sortLetters : sortLetters.slice(0, 5)
 
 
 // ========================================================
+
+
+return (
+    <main className={darkMode ? "contenedor-principal dark" : "contenedor-principal light"}>
+        <Header handleTheme={handleTheme} />
+
+        <h2>
+            Analyze your text <br />
+            in real-time.
+        </h2>
+
+        <WriteArea
+            handleChangeTextarea={handleChangeTextarea}
+            text={text}
+        />
+
+        <Controlls
+            excludeSpaces={excludeSpaces}
+            setExcludeSpaces={setExcludeSpaces}
+            handleExcludeSpaces={handleExcludeSpaces}
+            limitCharacter={limitCharacter}
+            handleChangeInputLimit={handleChangeInputLimit}
+            limitValue={limitValue}
+            handleLimitValue={handleLimitValue}
+            readingTime={readingTime}
+        />
+        <Stats
+            words={words}
+            characters={characters}
+            sentences={sentences}
+            readingTime={readingTime}
+        />
+
+        <LetterDensity
+            visibleLetters={visibleLetters}
+            showAll={showAll}
+            setShowAll={setShowAll}
+        />
+
+    </main >
+)
