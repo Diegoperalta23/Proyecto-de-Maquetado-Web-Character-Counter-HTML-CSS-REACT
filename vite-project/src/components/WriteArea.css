@@ -1,0 +1,14 @@
+.textarea {
+    width: 100%;
+    max-width: 720px;
+    height: 220px;
+    padding: 24px;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: none;
+    border-radius: 16px;
+    resize: none;
+    font-size: 18px;
+    line-height: 1.3;
+    outline: none;
+}

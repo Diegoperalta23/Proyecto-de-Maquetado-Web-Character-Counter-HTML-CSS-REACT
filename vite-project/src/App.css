@@ -1,0 +1,43 @@
+:root {
+    /* Fondos */
+    --bg-main: #12131A;
+    --bg-card: #1C1F2A;
+
+    /* Textos */
+    --text-main: #F2F2F7;
+    --text-secondary: #B4B7C9;
+
+    /* UI */
+    --progress-bar: #D19BFF;
+    --border-subtle: #2A2D3A;
+}
+
+
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.contenedor-principal {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    transition: 0.3s ease;
+    max-width: 730px;
+    margin: 20px auto;
+    border-left: 1px solid #2A2D3A;
+    border-right: 1px solid #2A2D3A;
+    border-top: 3px solid #2A2D3A;
+    border-bottom: 3px solid #2A2D3A;
+    padding: 0 40px;
+}
+
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 62px;
+    font-weight: 600;
+}

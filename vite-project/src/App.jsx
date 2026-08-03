@@ -16,115 +16,115 @@ const App = () => {
     const [limitValue, setLimitValue] = useState(300)
     const [showAll, setShowAll] = useState(false)
     const [darkMode, setDarkMode] = useState(true)
-}
 
 
-// ========================================================
-
-const handleExcludeSpaces = () => {
-    setExcludeSpaces(!excludeSpaces)
-}
-
-const handleLimitValue = (Value) => {
-    setLimitValue(Number(value))
-}
-
-const characters = excludeSpaces ? text.replace(/\s/g, "").length : text.length
-
-const words =
-    text.trim() === "" ? 0 : text.trim().split(/\s+/).length
-
-const sentences =
-    text.trim() === "" ? 0 :
-        text.split(/[.!?]+/).filter(sentence => sentence.trim() !== "").length
-
-const readingTime = words === 0
-    ? "< 1 minuto"
-    : `${Math.ceil(words / 200)} minuto`;
-
-const handleTheme = () => {
-    setDarkMode(!darkMode)
-}
-
-const handleChangeTextarea = (e) => {
-    const value = e.target.value
-
-    if (limitCharacter && value.length > limitValue)
-        setText(value)
-}
-
-const handleChangeInputLimit = () => {
-    setLimitCharacter(!limitCharacter)
-    const newText = text.slice(0, limitValue)
-    setText(newText)
-}
-
-const cleanText = text.toLowerCase().replace(/[^a-záéíóúñü]/g, "")
-const total = cleanText.length
-
-const dictionaryLetters = {}
-
-cleanText.split("").forEach(letter => {
-    dictionaryLetters[letter] = (dictionaryLetters[letter] || 0) + 1
-})
-
-const letters = Object.entries(dictionaryLetters).map(dataLetter => {
-    const letter = dataLetter[0]
-    const amountValue = dataLetter[1]
-
-    const infoToRenderLetter = {
-        letterName: letter,
-        amount: amountValue,
-        percentage: (amountValue / total) * 100
+    const handleExcludeSpaces = () => {
+        setExcludeSpaces(!excludeSpaces)
     }
-    return infoToRenderLetter
-})
+
+    const handleLimitValue = (Value) => {
+        setLimitValue(Number(value))
+    }
+
+    const characters = excludeSpaces ? text.replace(/\s/g, "").length : text.length
+
+    const words =
+        text.trim() === "" ? 0 : text.trim().split(/\s+/).length
+
+    const sentences =
+        text.trim() === "" ? 0 :
+            text.split(/[.!?]+/).filter(sentence => sentence.trim() !== "").length
+
+    const readingTime = words === 0
+        ? "< 1 minuto"
+        : `${Math.ceil(words / 200)} minuto`;
+
+    const handleTheme = () => {
+        setDarkMode(!darkMode)
+    }
+
+    const handleChangeTextarea = (e) => {
+        const value = e.target.value
+
+        if (limitCharacter && value.length > limitValue)
+            setText(value)
+    }
+
+    const handleChangeInputLimit = () => {
+        setLimitCharacter(!limitCharacter)
+        const newText = text.slice(0, limitValue)
+        setText(newText)
+    }
+
+    const cleanText = text.toLowerCase().replace(/[^a-záéíóúñü]/g, "")
+    const total = cleanText.length
+
+    const dictionaryLetters = {}
+
+    cleanText.split("").forEach(letter => {
+        dictionaryLetters[letter] = (dictionaryLetters[letter] || 0) + 1
+    })
+
+    const letters = Object.entries(dictionaryLetters).map(dataLetter => {
+        const letter = dataLetter[0]
+        const amountValue = dataLetter[1]
+
+        const infoToRenderLetter = {
+            letterName: letter,
+            amount: amountValue,
+            percentage: (amountValue / total) * 100
+        }
+        return infoToRenderLetter
+    })
 
 
-const sortLetters = letters.sort((a, b) => b.amount - a.amount)
+    const sortLetters = letters.sort((a, b) => b.amount - a.amount)
 
-const visibleLetters = showAll ? sortLetters : sortLetters.slice(0, 5)
-
-
-// ========================================================
+    const visibleLetters = showAll ? sortLetters : sortLetters.slice(0, 5)
 
 
-return (
-    <main className={darkMode ? "contenedor-principal dark" : "contenedor-principal light"}>
-        <Header handleTheme={handleTheme} />
+    // ========================================================
 
-        <h2>
-            Analyze your text <br />
-            in real-time.
-        </h2>
 
-        <WriteArea
-            handleChangeTextarea={handleChangeTextarea}
-            text={text}
-        />
+    return (
+        <main className={darkMode ? "contenedor-principal dark" : "contenedor-principal light"}>
+            <Header handleTheme={handleTheme} />
 
-        <Controlls
-            excludeSpaces={excludeSpaces}
-            setExcludeSpaces={setExcludeSpaces}
-            handleExcludeSpaces={handleExcludeSpaces}
-            limitCharacter={limitCharacter}
-            handleChangeInputLimit={handleChangeInputLimit}
-            limitValue={limitValue}
-            handleLimitValue={handleLimitValue}
-            readingTime={readingTime}
-        />
-        <Stats
-            words={words}
-            characters={characters}
-            sentences={sentences}
-            readingTime={readingTime}
-        />
+            <h2>
+                Analyze your text <br />
+                in real-time.
+            </h2>
 
-        <LetterDensity
-            visibleLetters={visibleLetters}
-            showAll={showAll}
-            setShowAll={setShowAll}
-        />
+            <WriteArea
+                handleChangeTextarea={handleChangeTextarea}
+                text={text}
+            />
 
-    </main >
-)
+            <Controlls
+                excludeSpaces={excludeSpaces}
+                setExcludeSpaces={setExcludeSpaces}
+                handleExcludeSpaces={handleExcludeSpaces}
+                limitCharacter={limitCharacter}
+                handleChangeInputLimit={handleChangeInputLimit}
+                limitValue={limitValue}
+                handleLimitValue={handleLimitValue}
+                readingTime={readingTime}
+            />
+            <Stats
+                words={words}
+                characters={characters}
+                sentences={sentences}
+                readingTime={readingTime}
+            />
+
+            <LetterDensity
+                visibleLetters={visibleLetters}
+                showAll={showAll}
+                setShowAll={setShowAll}
+            />
+
+        </main >
+    )
+}
+
+export default App

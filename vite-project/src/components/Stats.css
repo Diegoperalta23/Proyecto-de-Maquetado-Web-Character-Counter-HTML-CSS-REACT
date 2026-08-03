@@ -1,0 +1,52 @@
+.cards {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+.total-characters,
+.total-count,
+.total-sentence {
+    flex: 1;
+    height: 140px;
+    padding: 13px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.total-characters p,
+.total-count p,
+.total-sentence p {
+    font-size: 60px;
+    font-weight: bolder;
+    margin: 0;
+    color: black;
+}
+
+
+.total-characters span,
+.total-count span,
+.total-sentence span {
+    font-size: 18px;
+    color: black;
+}
+
+
+.total-characters {
+    background-image: url("../assets/bg-violeta.png");
+}
+
+
+.total-count {
+    background-image: url("../assets/bg-naranja.png");
+}
+
+
+.total-sentence {
+    background-image: url("../assets/bg-salmon.png");
+}

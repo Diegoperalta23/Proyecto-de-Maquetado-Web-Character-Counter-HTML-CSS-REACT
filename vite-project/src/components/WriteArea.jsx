@@ -1,4 +1,4 @@
-import ".WriteArea.css";
+import "./WriteArea.css";
 
 const WriteArea = ({ handleChangeTextarea, text }) => {
     return (
