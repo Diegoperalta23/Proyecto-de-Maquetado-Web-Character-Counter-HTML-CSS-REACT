@@ -115,10 +115,19 @@ Este proyecto permitió reforzar conceptos fundamentales de React:
 
 ---
 
+# Pagina Dark Mode / Light Mode
+
+![Character Counter Dark Mode](./src/assets/character-counter-page.png)
+
+![Character Counter Light Mode](./src/assets/character-counter-page-lightmode.png)
+
+# Pagina funcionando
+
+![Character Counter](./src/assets/character-counter-page-funcionando.png)
+
 # Autor
 
 Diego Peralta
 
-# Pagina
 
-![Character Counter](./src/assets/character-counter-page.png)
+
