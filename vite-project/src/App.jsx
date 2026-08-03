@@ -10,7 +10,6 @@ import "./App.css";
 
 const App = () => {
     const [text, setText] = useState("")
-
     const [excludeSpaces, setExcludeSpaces] = useState(false)
     const [limitCharacter, setLimitCharacter] = useState(false)
     const [limitValue, setLimitValue] = useState(300)
@@ -22,7 +21,7 @@ const App = () => {
         setExcludeSpaces(!excludeSpaces)
     }
 
-    const handleLimitValue = (Value) => {
+    const handleLimitValue = (value) => {
         setLimitValue(Number(value))
     }
 
@@ -46,8 +45,11 @@ const App = () => {
     const handleChangeTextarea = (e) => {
         const value = e.target.value
 
-        if (limitCharacter && value.length > limitValue)
-            setText(value)
+        if (limitCharacter && value.length > limitValue) {
+            return
+        }
+
+        setText(value)
     }
 
     const handleChangeInputLimit = () => {
